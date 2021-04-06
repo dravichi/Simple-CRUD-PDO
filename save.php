@@ -15,7 +15,7 @@ if (!empty($id)) {
 } else {
     $notes = $conn->read();
     foreach ($notes as $note) {
-        if ($title == $note['title']) {
+        if (strtolower($title) == strtolower($note['title'])) {
             echo "<script>
                     alert('Error : The title has been used!')
                     location.replace('index.php')
